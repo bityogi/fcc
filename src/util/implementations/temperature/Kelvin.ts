@@ -1,21 +1,22 @@
 import { IConvert, ITemperatureConvertorFactory } from '../../IConvert';
 import { TemperatureType } from '../../types/temperature';
+import { round } from '../../util';
 
 export class KelvinToCelsius implements IConvert {
   convert(value: number) {
-    return (value - 273.5)
+    return round((value - 273.15));
   }
 }
 
 export class KelvinToFarenheit implements IConvert {
   convert(value: number) {
-    return (value - 9/5) - 459.67
+    return round((value - 273.15) * 9/5 + 32);
   }
 }
 
 export class KelvinToRankine implements IConvert {
   convert(value: number) {
-    return (value * 9/5)
+    return round(value * 9/5);
   }
 }
 

@@ -8,29 +8,54 @@ import { RankineToCelsius, RankineToFarenheit, RankineToKelvin } from './impleme
 describe('Temperature Conversion Factory', () => {
   const tempConversionFactory = new TempConversionFactory();
 
-  describe('returns a valid celsius ', () => {
+  describe('returns a celsius ', () => {
     const from = TemperatureType.Celsius;
 
-    it('to farenheit convertor ', () => {
+    describe('to fareneit convertor', () => {
       const to = TemperatureType.Fahrenheit;
       const convertor = tempConversionFactory.GetConvertor(from, to);
-
-      expect(convertor).toBeInstanceOf(CelsiusToFarenheit);
+  
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(CelsiusToFarenheit);
+      });
+      it('converts correctly', () => {
+        const tempFrom = 0;
+        const expectedValue = 32;
+        expect(convertor.convert(tempFrom)).toBe(expectedValue);
+      });
     });
+    
 
-    it('to kelvin convertor ', () => {
+    describe('to kelvin convertor', () => {
       const to = TemperatureType.Kelvin;
       const convertor = tempConversionFactory.GetConvertor(from, to);
 
-      expect(convertor).toBeInstanceOf(CelsiusToKelvin);
+      it('of valid type ', () => {
+        expect(convertor).toBeInstanceOf(CelsiusToKelvin);
+      });
+
+      it('converts correctly', () => {
+        const tempFrom = 0;
+        const expectedValue = 273.15;
+        expect(convertor.convert(tempFrom)).toBe(expectedValue);
+      });
     });
-    
-    it('to rankine convertor ', () => {
+
+    describe('to rankine convertor', () => {
       const to = TemperatureType.Rankine;
       const convertor = tempConversionFactory.GetConvertor(from, to);
+  
+      it('of valid type ', () => {
+        expect(convertor).toBeInstanceOf(CelsiusToRankine);
+      });
 
-      expect(convertor).toBeInstanceOf(CelsiusToRankine);
+      it('converts correctly', () => {
+        const tempFrom = 0;
+        const expectedValue = 491.67;
+        expect(convertor.convert(tempFrom)).toBe(expectedValue);
+      });
     });
+    
 
     it('to throw an error ', () => {
       const to = TemperatureType.Celsius;
@@ -45,26 +70,53 @@ describe('Temperature Conversion Factory', () => {
   describe('returns a valid fahrenheit ', () => {
     const from = TemperatureType.Fahrenheit;
 
-    it('to celsius convertor ', () => {
+    describe('to celsius convertor', () => {
       const to = TemperatureType.Celsius;
       const convertor = tempConversionFactory.GetConvertor(from, to);
+  
+      it('of valid type ', () => {
+        expect(convertor).toBeInstanceOf(FarenheitToCelsius);
+      });
 
-      expect(convertor).toBeInstanceOf(FarenheitToCelsius);
+      it('converts correctly', () => {
+        const tempFrom = 32;
+        const expectedValue = 0;
+        expect(convertor.convert(tempFrom)).toBe(expectedValue);
+      });
+
     });
 
-    it('to kelvin convertor ', () => {
+    describe('to kelvin convertor', () => {
       const to = TemperatureType.Kelvin;
       const convertor = tempConversionFactory.GetConvertor(from, to);
 
-      expect(convertor).toBeInstanceOf(FarenheitToKelvin);
+      it('of valid type ', () => {
+        expect(convertor).toBeInstanceOf(FarenheitToKelvin);
+      });
+
+      it('converts correctly', () => {
+        const tempFrom = 32;
+        const expectedValue = 273.15;
+        expect(convertor.convert(tempFrom)).toBe(expectedValue);
+      });
     });
 
-    it('to rankine convertor ', () => {
+    describe('to rankine convertor ', () => {
       const to = TemperatureType.Rankine;
       const convertor = tempConversionFactory.GetConvertor(from, to);
 
-      expect(convertor).toBeInstanceOf(FarenheitToRankine);
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(FarenheitToRankine);
+      });
+
+      it('converts correctly', () => {
+        const tempFrom = 32;
+        const expectedValue = 491.67;
+        expect(convertor.convert(tempFrom)).toBe(expectedValue);
+      });
     });
+
+    
 
     it('to throw an error ', () => {
       const to = TemperatureType.Fahrenheit;
@@ -78,26 +130,53 @@ describe('Temperature Conversion Factory', () => {
   describe('returns a valid kelvin ', () => {
     const from = TemperatureType.Kelvin;
 
-    it('to celsius convertor ', () => {
+    describe('to celsius convertor ', () => {
       const to = TemperatureType.Celsius;
       const convertor = tempConversionFactory.GetConvertor(from, to);
 
-      expect(convertor).toBeInstanceOf(KelvinToCelsius);
-    });
+      it('of valid type ', () => {
+        expect(convertor).toBeInstanceOf(KelvinToCelsius);
+      });
 
-    it('to fahrenheit convertor ', () => {
+      it('converts correctly', () => {
+        const tempFrom = 0;
+        const expectedValue = -273.15;
+        expect(convertor.convert(tempFrom)).toBe(expectedValue);
+      });
+
+    });
+    
+    describe('to fahrenheit convertor', () => {
       const to = TemperatureType.Fahrenheit;
       const convertor = tempConversionFactory.GetConvertor(from, to);
 
-      expect(convertor).toBeInstanceOf(KelvinToFarenheit);
-    });
+      it('of valid type ', () => {
+        expect(convertor).toBeInstanceOf(KelvinToFarenheit);
+      });
 
-    it('to rankine convertor ', () => {
+      it('converts correctly', () => {
+        const tempFrom = 0;
+        const expectedValue = -459.67;
+        expect(convertor.convert(tempFrom)).toBe(expectedValue);
+      });
+    });
+    
+
+    describe('to rankine convertor', () => {
       const to = TemperatureType.Rankine;
       const convertor = tempConversionFactory.GetConvertor(from, to);
 
-      expect(convertor).toBeInstanceOf(KelvinToRankine);
+      it('to rankine convertor ', () => {
+        expect(convertor).toBeInstanceOf(KelvinToRankine);
+      });
+
+      it('converts correctly', () => {
+        const tempFrom = 10;
+        const expectedValue = 18;
+        expect(convertor.convert(tempFrom)).toBe(expectedValue);
+      });
     });
+    
 
     it('to throw an error ', () => {
       const to = TemperatureType.Kelvin;
@@ -111,26 +190,59 @@ describe('Temperature Conversion Factory', () => {
   describe('returns a valid rankine ', () => {
     const from = TemperatureType.Rankine;
 
-    it('to celsius convertor ', () => {
+    describe('to celsius convertor', () => {
       const to = TemperatureType.Celsius;
       const convertor = tempConversionFactory.GetConvertor(from, to);
+  
+      it('of valid type ', () => {
+        expect(convertor).toBeInstanceOf(RankineToCelsius);
+      });
 
-      expect(convertor).toBeInstanceOf(RankineToCelsius);
+      it('converts correctly', () => {
+        const tempFrom = 10;
+        const expectedValue = -267.59;
+        expect(convertor.convert(tempFrom)).toBe(expectedValue);
+      });
     });
 
-    it('to fahrenheit convertor ', () => {
+    describe('to fahrenheit convertor ', () => {
       const to = TemperatureType.Fahrenheit;
       const convertor = tempConversionFactory.GetConvertor(from, to);
 
-      expect(convertor).toBeInstanceOf(RankineToFarenheit);
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(RankineToFarenheit);
+      });
+
+      it('converts correctly', () => {
+        const tempFrom = 10;
+        const expectedValue = -449.67;
+        expect(convertor.convert(tempFrom)).toBe(expectedValue);
+      });
     });
 
-    it('to kelvin convertor ', () => {
+    describe('to kelvin convertor ', () => {
       const to = TemperatureType.Kelvin;
       const convertor = tempConversionFactory.GetConvertor(from, to);
 
-      expect(convertor).toBeInstanceOf(RankineToKelvin);
-    });
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(RankineToKelvin);
+      });
+
+      it('converts correctly', () => {
+        const tempFrom = 10;
+        const expectedValue = 5.56;
+        expect(convertor.convert(tempFrom)).toBe(expectedValue);
+      });
+    })
+    
+    
+    
+
+    
+
+    
+
+    
 
     it('to throw an error ', () => {
       const to = TemperatureType.Rankine;
@@ -141,5 +253,5 @@ describe('Temperature Conversion Factory', () => {
     });
   });
 
-  
+
 });
