@@ -16,6 +16,14 @@ import {
   ToTableSpoons as CubicIncesToTableSpoons
 } from './implementations/volume/cubicInches';
 
+import {
+  ToCubicFeet as CupsToCubicFeet,
+  ToCubicInches as CupsToCubicInches,
+  ToGallons as CupsToGallons,
+  ToLiters as CupsToLiters,
+  ToTableSpoons as CupsToTableSpoons
+} from './implementations/volume/cups';
+
 describe('Volume Conversion Factory', () => {
   const volumeConversionFactory = new VolumeConversionFactory();
 
@@ -100,6 +108,7 @@ describe('Volume Conversion Factory', () => {
 
   });
 
+  //Cubic Inches
   describe('returns a cubic inch', () => {
     const from = VolumeType.cubicInches;
 
@@ -178,10 +187,88 @@ describe('Volume Conversion Factory', () => {
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
-    
-    
-    
-
   });
+
+  // Cups
+  describe('returns a cups', () => {
+    const from = VolumeType.cups;
+
+    describe('to cubic-feet', () => {
+      const to = VolumeType.cubicFeet;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(CupsToCubicFeet);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 100;
+        const expectedValue = 0.84;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
+    });
+
+    describe('to cubic-inches', () => {
+      const to = VolumeType.cubicInches;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(CupsToCubicInches);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 10;
+        const expectedValue = 144.38;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
+    });
+    
+    describe('to gallons', () => {
+      const to = VolumeType.gallons;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(CupsToGallons);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 10;
+        const expectedValue = 0.63;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
+    });
+    
+    describe('to liters', () => {
+      const to = VolumeType.liters;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(CupsToLiters);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 10;
+        const expectedValue = 2.37;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
+    });
+    
+    describe('to tablespoons', () => {
+      const to = VolumeType.tablespoons;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(CupsToTableSpoons);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 10;
+        const expectedValue = 160;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
+    });
+    
+  });
+  
   
 });
