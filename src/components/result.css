@@ -1,0 +1,13 @@
+.resultPopover {
+  display: flex;
+  justify-content: center;
+  min-height: 200px;
+  min-width: 200px;
+  border-radius: 20px;
+  font-size: 50px;
+  color: #282c34;
+  margin: 10px;
+  padding: 10px;
+  align-items: center;
+  background-color: #ffffff
+}

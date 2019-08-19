@@ -10,12 +10,12 @@ export enum ResultType {
   Invalid = 'invalid'
 }
 
-export default function Convert (
+export default function CheckResponse (
   value: number, 
   from: TemperatureType | VolumeType, 
   to: TemperatureType | VolumeType,
   answer: number) : ResultType {
- 
+    
     if (Object.values(TemperatureType).includes(from)) {
       // Convert from temperature
       try {
@@ -25,7 +25,7 @@ export default function Convert (
        
         return checkAnswer(answer, result);
       } catch (error) {
-        console.error('Error converting temperature: ', error.message);
+        // console.error('Error converting temperature: ', error.message);
         return ResultType.Invalid;
       }
       
@@ -39,7 +39,7 @@ export default function Convert (
         return checkAnswer(answer, result);
         
       } catch (error) {
-        console.error('Error converting volume: ', error.message);
+        // console.error('Error converting volume: ', error.message);
         return ResultType.Invalid;
       }
     } else {
