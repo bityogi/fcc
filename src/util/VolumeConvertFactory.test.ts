@@ -24,6 +24,31 @@ import {
   ToTableSpoons as CupsToTableSpoons
 } from './implementations/volume/cups';
 
+import {
+  ToCubicFeet as GallonsToCubicFeet,
+  ToCubicInches as GallonsToCubicInches,
+  ToCups as GallonsToCups,
+  ToLiters as GallonsToLiters,
+  ToTableSpoons as GallonsToTableSpoons
+} from './implementations/volume/gallons';
+
+import {
+  ToCubicFeet as LitersToCubicFeet,
+  ToCubicInches as LitersToCubicInches,
+  ToCups as LitersToCups,
+  ToGallons as LitersToGallons,
+  ToTableSpoons as LitersToTableSpoons
+} from './implementations/volume/liters';
+
+import {
+  ToCubicFeet as TableSpoonsToCubicFeet,
+  ToCubicInches as TableSpoonsToCubicInches,
+  ToCups as TableSpoonsToCups,
+  ToGallons as TableSpoonsToGallons,
+  ToLiters as TableSpoonsToLiters
+} from './implementations/volume/tablespoons';
+
+
 describe('Volume Conversion Factory', () => {
   const volumeConversionFactory = new VolumeConversionFactory();
 
@@ -267,6 +292,89 @@ describe('Volume Conversion Factory', () => {
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
+    
+  });
+  
+  //Gallons
+  describe('returns a gallons', () => {
+    const from = VolumeType.gallons;
+
+    describe('to cubic-feet', () => {
+      const to = VolumeType.cubicFeet;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(GallonsToCubicFeet);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 10;
+        const expectedValue = 1.34;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
+    });
+    
+    describe('to cubic-inches', () => {
+      const to = VolumeType.cubicInches;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(GallonsToCubicInches);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 10;
+        const expectedValue = 2310;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
+    });
+
+    describe('to cups', () => {
+      const to = VolumeType.cups;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(GallonsToCups);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 10;
+        const expectedValue = 160;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
+    });
+    
+  
+    describe('to liters', () => {
+      const to = VolumeType.liters;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(GallonsToLiters);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 10;
+        const expectedValue = 37.85;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
+    });
+    
+    describe('to tablespoons', () => {
+      const to = VolumeType.tablespoons;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(GallonsToTableSpoons);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 10;
+        const expectedValue = 2560;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
+    });
+    
     
   });
   
