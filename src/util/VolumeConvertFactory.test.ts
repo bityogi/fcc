@@ -466,23 +466,78 @@ describe('Volume Conversion Factory', () => {
     const from = VolumeType.tablespoons;
 
     describe('to cubic-feet', () => {
-      
+      const to = VolumeType.cubicFeet;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(TableSpoonsToCubicFeet);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 1000;
+        const expectedValue = 0.52;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
     });
 
     describe('to cubic-inches', () => {
-      
+      const to = VolumeType.cubicInches;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(TableSpoonsToCubicInches);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 100;
+        const expectedValue = 90.25;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
     });
 
     describe('to cups', () => {
-      
+      const to = VolumeType.cups;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(TableSpoonsToCups);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 100;
+        const expectedValue = 6.25;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
     });
 
     describe('to gallons', () => {
-      
+      const to = VolumeType.gallons;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(TableSpoonsToGallons);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 100;
+        const expectedValue = 0.39;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
     });
     
     describe('to liters', () => {
-      
+      const to = VolumeType.liters;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(TableSpoonsToLiters);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 100;
+        const expectedValue = 1.48;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
     });
     
 
