@@ -37,7 +37,7 @@ describe('Temperature Conversion Factory', () => {
 
       it('converts correctly', () => {
         const tempFrom = 0;
-        const expectedValue = 273.15;
+        const expectedValue = 273.1;
         expect(convertor.convert(tempFrom)).toBe(expectedValue);
       });
     });
@@ -52,7 +52,7 @@ describe('Temperature Conversion Factory', () => {
 
       it('converts correctly', () => {
         const tempFrom = 0;
-        const expectedValue = 491.67;
+        const expectedValue = 491.7;
         expect(convertor.convert(tempFrom)).toBe(expectedValue);
       });
     });
@@ -98,7 +98,7 @@ describe('Temperature Conversion Factory', () => {
 
       it('converts correctly', () => {
         const tempFrom = 32;
-        const expectedValue = 273.15;
+        const expectedValue = 273.1;
         expect(convertor.convert(tempFrom)).toBe(expectedValue);
       });
     });
@@ -113,7 +113,7 @@ describe('Temperature Conversion Factory', () => {
 
       it('converts correctly', () => {
         const tempFrom = 84.2;
-        const expectedValue = 543.87;
+        const expectedValue = 543.9;
         expect(convertor.convert(tempFrom)).toBe(expectedValue);
       });
     });
@@ -129,6 +129,8 @@ describe('Temperature Conversion Factory', () => {
     });
   });
 
+
+  // Kelvin
   describe('returns a valid kelvin ', () => {
     const from = TemperatureType.Kelvin;
 
@@ -142,7 +144,7 @@ describe('Temperature Conversion Factory', () => {
 
       it('converts correctly', () => {
         const tempFrom = 0;
-        const expectedValue = -273.15;
+        const expectedValue = -273.1;
         expect(convertor.convert(tempFrom)).toBe(expectedValue);
       });
 
@@ -158,7 +160,7 @@ describe('Temperature Conversion Factory', () => {
 
       it('converts correctly', () => {
         const tempFrom = 0;
-        const expectedValue = -459.67;
+        const expectedValue = -459.7;
         expect(convertor.convert(tempFrom)).toBe(expectedValue);
       });
     });
@@ -202,7 +204,7 @@ describe('Temperature Conversion Factory', () => {
 
       it('converts correctly', () => {
         const tempFrom = 10;
-        const expectedValue = -267.59;
+        const expectedValue = -267.6;
         expect(convertor.convert(tempFrom)).toBe(expectedValue);
       });
     });
@@ -217,7 +219,7 @@ describe('Temperature Conversion Factory', () => {
 
       it('converts correctly', () => {
         const tempFrom = 10;
-        const expectedValue = -449.67;
+        const expectedValue = -449.7;
         expect(convertor.convert(tempFrom)).toBe(expectedValue);
       });
     });
@@ -232,7 +234,7 @@ describe('Temperature Conversion Factory', () => {
 
       it('converts correctly', () => {
         const tempFrom = 10;
-        const expectedValue = 5.56;
+        const expectedValue = 5.6;
         expect(convertor.convert(tempFrom)).toBe(expectedValue);
       });
     })

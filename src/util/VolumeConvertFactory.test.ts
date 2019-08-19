@@ -80,7 +80,7 @@ describe('Volume Conversion Factory', () => {
       
       it('converts correctly', () => {
         const volumeFrom = 1;
-        const expectedValue = 28.32;
+        const expectedValue = 28.3;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -95,7 +95,7 @@ describe('Volume Conversion Factory', () => {
       
       it('converts correctly', () => {
         const volumeFrom = 2;
-        const expectedValue = 239.38;
+        const expectedValue = 239.4;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -110,7 +110,7 @@ describe('Volume Conversion Factory', () => {
       
       it('converts correctly', () => {
         const volumeFrom = 1;
-        const expectedValue = 7.48;
+        const expectedValue = 7.5;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -125,7 +125,7 @@ describe('Volume Conversion Factory', () => {
       
       it('converts correctly', () => {
         const volumeFrom = 2;
-        const expectedValue = 3830.03;
+        const expectedValue = 3830.0;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -147,7 +147,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 1000;
-        const expectedValue = 0.58;
+        const expectedValue = 0.6;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
       
@@ -163,7 +163,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 100;
-        const expectedValue = 1.64;
+        const expectedValue = 1.6;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -178,7 +178,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 100;
-        const expectedValue = 6.93;
+        const expectedValue = 6.9;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -193,7 +193,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 100;
-        const expectedValue = 0.43;
+        const expectedValue = 0.4;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -208,7 +208,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 20;
-        const expectedValue = 22.16;
+        const expectedValue = 22.2;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -228,7 +228,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 100;
-        const expectedValue = 0.84;
+        const expectedValue = 0.8;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -243,7 +243,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 10;
-        const expectedValue = 144.38;
+        const expectedValue = 144.4;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -258,7 +258,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 10;
-        const expectedValue = 0.63;
+        const expectedValue = 0.6;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -272,8 +272,8 @@ describe('Volume Conversion Factory', () => {
       });
 
       it('converts correctly', () => {
-        const volumeFrom = 10;
-        const expectedValue = 2.37;
+        const volumeFrom = 25.6;
+        const expectedValue = 6.1;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -309,7 +309,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 10;
-        const expectedValue = 1.34;
+        const expectedValue = 1.3;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -355,7 +355,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 10;
-        const expectedValue = 37.85;
+        const expectedValue = 37.9;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -392,7 +392,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 10;
-        const expectedValue = 0.35;
+        const expectedValue = 0.4;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -407,7 +407,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 10;
-        const expectedValue = 610.24;
+        const expectedValue = 610.2;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -422,7 +422,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 10;
-        const expectedValue = 42.27;
+        const expectedValue = 42.3;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -437,7 +437,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 10;
-        const expectedValue = 2.64;
+        const expectedValue = 2.6;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -452,7 +452,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 10;
-        const expectedValue = 676.28;
+        const expectedValue = 676.3;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -475,7 +475,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 1000;
-        const expectedValue = 0.52;
+        const expectedValue = 0.5;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -490,7 +490,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 100;
-        const expectedValue = 90.25;
+        const expectedValue = 90.3;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -505,7 +505,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 100;
-        const expectedValue = 6.25;
+        const expectedValue = 6.3;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -520,7 +520,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 100;
-        const expectedValue = 0.39;
+        const expectedValue = 0.4;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });
@@ -535,7 +535,7 @@ describe('Volume Conversion Factory', () => {
 
       it('converts correctly', () => {
         const volumeFrom = 100;
-        const expectedValue = 1.48;
+        const expectedValue = 1.5;
         expect(convertor.convert(volumeFrom)).toBe(expectedValue);
       });
     });

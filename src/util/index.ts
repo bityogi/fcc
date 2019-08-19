@@ -23,13 +23,9 @@ export default function Convert (
         const convertor = tempConversionFactory.GetConvertor(from as TemperatureType, to as TemperatureType);
         const result = convertor.convert(value);
        
-        if (round(answer) === result) {
-          return ResultType.Correct
-        } else {
-          return ResultType.Incorrect
-        }
+        return checkAnswer(answer, result);
       } catch (error) {
-        console.error('Error converting temperature: ', error);
+        console.error('Error converting temperature: ', error.message);
         return ResultType.Invalid;
       }
       
@@ -40,18 +36,28 @@ export default function Convert (
         const convertor = volumeConversionFactory.GetConvertor(from as VolumeType, to as VolumeType);
         const result = convertor.convert(value);
 
-        if (round(answer) === result) {
-          return ResultType.Correct
-        } else {
-          return ResultType.Incorrect
-        }
+        return checkAnswer(answer, result);
         
       } catch (error) {
-        console.error('Error converting temperature: ', error);
+        console.error('Error converting volume: ', error.message);
         return ResultType.Invalid;
       }
     } else {
       return ResultType.Invalid;
+    }
+
+    function checkAnswer(answer: any, result: number) : ResultType {
+      try {
+        const roundedAnswer = round(answer);
+        if (roundedAnswer === result) {
+          return ResultType.Correct
+        } else {
+          return ResultType.Incorrect
+        }
+      } catch (error) {
+        //There was an error rounding the answer. Return, `incorrect`
+        return ResultType.Incorrect
+      }
     }
 
   }
