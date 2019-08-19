@@ -8,6 +8,7 @@ import { RankineToCelsius, RankineToFarenheit, RankineToKelvin } from './impleme
 describe('Temperature Conversion Factory', () => {
   const tempConversionFactory = new TempConversionFactory();
 
+  // Celsius
   describe('returns a celsius ', () => {
     const from = TemperatureType.Celsius;
 
@@ -67,6 +68,7 @@ describe('Temperature Conversion Factory', () => {
 
   });
 
+  // Fahrenheit
   describe('returns a valid fahrenheit ', () => {
     const from = TemperatureType.Fahrenheit;
 
@@ -110,8 +112,8 @@ describe('Temperature Conversion Factory', () => {
       });
 
       it('converts correctly', () => {
-        const tempFrom = 32;
-        const expectedValue = 491.67;
+        const tempFrom = 84.2;
+        const expectedValue = 543.87;
         expect(convertor.convert(tempFrom)).toBe(expectedValue);
       });
     });

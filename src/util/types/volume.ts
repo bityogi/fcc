@@ -1,8 +1,8 @@
 export enum VolumeType {
-  liters,
-  tablespoons,
-  cubicInches,
-  cups,
-  cubicFeet,
-  gallons
+  liters = 'liters',
+  tablespoons = 'tablespoons',
+  cubicInches = 'cubic-inches',
+  cups = 'cups',
+  cubicFeet = 'cubic-feet',
+  gallons = 'gallons'
 }

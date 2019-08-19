@@ -3,31 +3,31 @@ import { VolumeType } from '../../types/volume';
 import { round } from '../../util';
 
 export class ToCubicFeet implements IConvert {
-  convert(to: VolumeType) {
+  convert(to: number) {
     return round(to / 1728)
   }
 }
 
 export class ToLiters implements IConvert {
-  convert(to: VolumeType) {
+  convert(to: number) {
     return round(to / 61.024)
   }
 }
 
 export class ToCups implements IConvert {
-  convert(to: VolumeType) {
+  convert(to: number) {
     return round(to / 14.438)
   }
 }
 
 export class ToGallons implements IConvert {
-  convert(to: VolumeType) {
+  convert(to: number) {
     return round(to / 231)
   }
 }
 
 export class ToTableSpoons implements IConvert {
-  convert(to: VolumeType) {
+  convert(to: number) {
     return round(to * 1.108)
   }
 }

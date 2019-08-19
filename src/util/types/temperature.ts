@@ -1,6 +1,6 @@
 export enum TemperatureType {
-  Kelvin,
-  Celsius,
-  Fahrenheit,
-  Rankine
+  Kelvin = 'kelvin',
+  Celsius = 'celsius',
+  Fahrenheit = 'fahrenheit',
+  Rankine = 'rankine'
 }

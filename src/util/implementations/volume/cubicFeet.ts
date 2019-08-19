@@ -3,32 +3,32 @@ import { VolumeType } from '../../types/volume';
 import { round } from '../../util';
 
 export class ToLiters implements IConvert {
-  convert(to: VolumeType) {
-    return round(to * 28.3168);
+  convert(value: number) {
+    return round(value * 28.3168);
   }
 }
 
 export class ToCubicInches implements IConvert {
-  convert(to: VolumeType) {
-    return round(to * 1728)
+  convert(value: number) {
+    return round(value * 1728)
   }
 }
 
 export class ToCups implements IConvert {
-  convert(to: VolumeType) {
-    return round(to * 119.688)
+  convert(value: number) {
+    return round(value * 119.688)
   }
 }
 
 export class ToGallons implements IConvert {
-  convert(to: VolumeType) {
-    return round(to * 7.48052)
+  convert(value: number) {
+    return round(value * 7.48052)
   }
 }
 
 export class ToTableSpoons implements IConvert {
-  convert(to: VolumeType) {
-    return round(to * 1915.013)
+  convert(value: number) {
+    return round(value * 1915.013)
   }
 }
 
