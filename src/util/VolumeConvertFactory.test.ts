@@ -378,5 +378,115 @@ describe('Volume Conversion Factory', () => {
     
   });
   
+  //Liters
+  describe('returns a liters', () => {
+    const from = VolumeType.liters;
+
+    describe('to cubic-feet', () => {
+      const to = VolumeType.cubicFeet;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(LitersToCubicFeet);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 10;
+        const expectedValue = 0.35;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
+    });
+
+    describe('to cubic-inches', () => {
+      const to = VolumeType.cubicInches;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(LitersToCubicInches);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 10;
+        const expectedValue = 610.24;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
+    });
+
+    describe('to cups', () => {
+      const to = VolumeType.cups;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(LitersToCups);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 10;
+        const expectedValue = 42.27;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
+    });
+
+    describe('to gallons', () => {
+      const to = VolumeType.gallons;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(LitersToGallons);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 10;
+        const expectedValue = 2.64;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
+    });
+    
+    describe('to tablespoons', () => {
+      const to = VolumeType.tablespoons;
+      const convertor = volumeConversionFactory.GetConvertor(from, to);
+
+      it('of valid type', () => {
+        expect(convertor).toBeInstanceOf(LitersToTableSpoons);
+      });
+
+      it('converts correctly', () => {
+        const volumeFrom = 10;
+        const expectedValue = 676.28;
+        expect(convertor.convert(volumeFrom)).toBe(expectedValue);
+      });
+    });
+    
+    
+    
+  });
+
+  //Tablespoons
+  describe('returns a tablespoons', () => {
+    const from = VolumeType.tablespoons;
+
+    describe('to cubic-feet', () => {
+      
+    });
+
+    describe('to cubic-inches', () => {
+      
+    });
+
+    describe('to cups', () => {
+      
+    });
+
+    describe('to gallons', () => {
+      
+    });
+    
+    describe('to liters', () => {
+      
+    });
+    
+
+  });
+  
   
 });
