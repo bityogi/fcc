@@ -1,11 +1,15 @@
 before_script: npm install
-
 script: npm run test
-
 language: node_js
-
-env: 
+env:
+  matrix:
   - PORT=80
-
-node_js: 
-  - "10"
+  global:
+    secure: T/ZDdiHsk8Wo6r2WtCYe0DVKSD/cgRXMTP4vAZQE5f62UktHW0iNm/kdsCKykBer8MDmXtQgKwQOjc6dt2l6mIxbeVr1R2+qIWTzz9OKGfDFxJ5gNaCssa06eEjem1yRapuAcz+hM9+pFJsfEtfj4euJ3xuu9nS/ifDZZSX+1enu2IoMkqIkkCpxBiKsfB5W7EVARH5SCclwwU4FLGHV6yk2+Qg+55WU8fhBNxJjFlJkv6LBKW9yyiwUiHN+CvIr+apbeWvi1VWf60Yef+xg3tWPxAnDLvL0Tl5H5jpYN6pMNxZzFVUjmxF288T9ES0AJWd/h4kWhDYfzirIDh9XRdGjAdz7rhRlBImQW9FY4JDbtLjUDy+Pvo7H74XzVwdkoFEvl0VHyy3JHOMM1wdyZFsX4DTgHVdSQogEykRXCuYjmFBxPZjgXSYcv68iDzcTHtakDC4Riee4aYn27VGJmap8GZP2UdROccIdkU+h91rERrcfDcm1MTxWPMKVh4AwcU1Bz+NXQAeti0HUl0E/DObraRA8Ae3fvGPPgmr1GPanHqqFeCdS0r1YHxZaXLqb1P5BmTvNjpxFobiEGA+p3EMtPeOeT/2KrrHWfShnwgXsDbRW80/AkosUUwHzpHxaIGarFiekQ1psyprVhFv/mFvfeQq2tu/XebSZ4P/Tmq4=
+node_js:
+- '10'
+deploy:
+  provider: firebase
+  token:
+    secure: T/ZDdiHsk8Wo6r2WtCYe0DVKSD/cgRXMTP4vAZQE5f62UktHW0iNm/kdsCKykBer8MDmXtQgKwQOjc6dt2l6mIxbeVr1R2+qIWTzz9OKGfDFxJ5gNaCssa06eEjem1yRapuAcz+hM9+pFJsfEtfj4euJ3xuu9nS/ifDZZSX+1enu2IoMkqIkkCpxBiKsfB5W7EVARH5SCclwwU4FLGHV6yk2+Qg+55WU8fhBNxJjFlJkv6LBKW9yyiwUiHN+CvIr+apbeWvi1VWf60Yef+xg3tWPxAnDLvL0Tl5H5jpYN6pMNxZzFVUjmxF288T9ES0AJWd/h4kWhDYfzirIDh9XRdGjAdz7rhRlBImQW9FY4JDbtLjUDy+Pvo7H74XzVwdkoFEvl0VHyy3JHOMM1wdyZFsX4DTgHVdSQogEykRXCuYjmFBxPZjgXSYcv68iDzcTHtakDC4Riee4aYn27VGJmap8GZP2UdROccIdkU+h91rERrcfDcm1MTxWPMKVh4AwcU1Bz+NXQAeti0HUl0E/DObraRA8Ae3fvGPPgmr1GPanHqqFeCdS0r1YHxZaXLqb1P5BmTvNjpxFobiEGA+p3EMtPeOeT/2KrrHWfShnwgXsDbRW80/AkosUUwHzpHxaIGarFiekQ1psyprVhFv/mFvfeQq2tu/XebSZ4P/Tmq4=
+  project: bityogi-3094e
