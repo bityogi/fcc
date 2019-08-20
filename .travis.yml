@@ -4,7 +4,7 @@ before_script:
 script: 
   - npm run test 
   - npm run build
-  - firebase deploy --only hosting --token "Ko+BhyBITKhGmDN4gq3+OktgB7hQ9iQSHAeftznYTbbSNiwbq+FdXQF0WcZwSm2i0KdwObgo311wKSyacxVNWeeLF4Ktr7T0970/4IRQ4UVETx/qVxCsK85Wgv7q9NFzHYNd+95YQR4Df+qxK3vbv1uuIIlfZWqbQeXSibfyxexfKKgCxeSuGdwBUWmXnxRBfB7WqPEUc+yTSO7zWGDr67+JeEkNVx0AMak2K91VyUN0jEUYPg5nqVGYXD9olh0E/BE7/yZFx2jScrPegs2Exvz1aI7K4uOoyPjhZmZaqIAfyI0fid7Bp/B53JOWmK7phE2JcTjYB3Eq9nWVirqJMwqfGJqeZmQy3mnTyyAi2kssZc833zaKeGage287Fe7dihvjIFYErlchkinwWXq7GngoDn8o1VJQvpATP8k1QRhMTQPGPHDv1pbYWtpLeqdLAKMzwB46b+tgMcJfYwWoZ3e6BQRucEEmc560zr3vwRYnsQRne0TaknlBK5OIC1wOsbLB3omQ7C3OfcqSY2eTekpS9OXG9wRFnf7Z9LoQDj5dFJJ+zOZcj0jr/3577/v4h+UhIRLQ+gkUJmi+hEqLJd4qscrD39icl9yvde1S9lGEVRC/oTuY9nfAUnhGbZ6MQdiuY7txu00OWewDbi616xPqUtIcl72QRLK+mnttFcw="
+  - firebase deploy --only hosting --token "1/2GYCurimGnLOQ1Vj6CTrVulgXLuFtx2aS8QnJuE5Nl4"
 language: node_js
 node_js:
 - 'node'
