@@ -1,13 +1,8 @@
 before_script: npm install
-script: npm run test
+script: npm run test; npm run build
 language: node_js
-env:
-  matrix:
-  - PORT=80
-  global:
-    secure: OVB8Z9lTqK69cni2OV55KolPBGTt6gyqMbUxjiKUXdeun2MedO+2SoTXX2JX/dq+mQDuiQVFioqt7PN94W/uNrlvLB7QsTdrH0uk7smV/KddtKshvXeaE8jmsnmxgxVFJWZWXSNQI1zwXYSUnTihsEW/LTAjTbpit3HrAxTa5EwZAoUeVWEOhkDjC2VFBXoupvuBQ5wrO5sdHFjfolGWJ/rEID5l8bjHWNPSSGNPb+nK0d6uDgOjq9bGhS4rdyUg9QBUb13/+8jyEtwnoFWZTAX0hClwelblYb8FSZmvk5sJgDM0cYd/tYJcPZ9BZPtyJNrq0j6ktPiwVMoGh5Tx8mizxEwA40DmVj484pRsCqugHQPG4TGEqpoqVhZx/Y6cWqsdOcj6rYIqyG9bekizlVclHCicR7KXm+fqPFkqBblcB/uokspbr5Dl5GflMBM33qy7d3x47NistW07FGhJuWOh6/C/Y08cUjHdi4xcy0tNeNBe+npzIqBBw6SgJUnuaBAvjYQWMqqt7pwpW+EmwMxy5YRntt8wO52geH9v6cvNP4oLFTGxJFsiU8SXnp1zkyIQut1JE777Th8a47mZqGzcDVj8BSTec6GafS0nXXum7HWv6TdFyPyw/f8MkVQSq76U9nEyxbGeqJq729RwxHpj3p9gh8v5J7NqfEl82c4=
 node_js:
-- '10'
+- 'node'
 deploy:
   provider: firebase
   token:
