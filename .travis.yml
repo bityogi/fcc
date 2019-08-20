@@ -1,13 +1,13 @@
+language: node_js
+branches:
+  only:
+    - master
 before_script: 
   - npm install
   - npm install firebase-tools -g
 script: 
   - npm run test 
   - npm run build
-  - firebase deploy --only hosting --token "1/2GYCurimGnLOQ1Vj6CTrVulgXLuFtx2aS8QnJuE5Nl4"
-language: node_js
+  - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then firebase deploy --token "1/2GYCurimGnLOQ1Vj6CTrVulgXLuFtx2aS8QnJuE5Nl4"; fi
 node_js:
 - 'node'
-branches:
-  only:
-    - master
